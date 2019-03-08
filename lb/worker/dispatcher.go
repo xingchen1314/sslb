@@ -60,7 +60,9 @@ func execRequest(address string, r *http.Request) request.SSLBRequest {
 		return ret
 	}
 
-	requestAddress := address + r.URL.String()
+	//次数会修改配置文件服务路径
+	//requestAddress := address + r.URL.String()
+	requestAddress := address
 
 	client := &http.Client{}
 	httpRequest, err = http.NewRequest(r.Method, requestAddress, r.Body)
